@@ -1,0 +1,220 @@
+.shop {
+  padding: 2rem 3rem;
+  @include respond(phone) {
+    padding: 2rem 1rem;
+  }
+  display: flex;
+  flex-flow: row nowrap;
+  @include respond(phone) {
+    flex-flow: column nowrap;
+  }
+  &__items {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-basis: 70%;
+
+    @include respond(phone) {
+      justify-content: center;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+    @include respond(phone) {
+      &:nth-child(2n) {
+        margin-right: 0rem;
+      }
+      width: 15rem;
+    }
+    position: relative;
+    &__discount {
+      font-size: 1.3rem;
+      background-color: $color-green-light;
+      position: absolute;
+      padding: 0.2rem 0.8rem;
+      color: $color-white;
+      top: 2rem;
+    }
+
+    &__img {
+      height: 25rem;
+      @include respond(laptop) {
+        width: 25rem;
+      }
+      @include respond(phone) {
+        width: 15rem;
+        height: 10rem;
+      }
+      width: 30rem;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 3rem;
+      border: 2px solid $color-grey-light;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
+      }
+    }
+    &__desc {
+      display: flex;
+      flex-flow: column nowrap;
+      padding: 0 1rem 1rem 1rem;
+      background: $color-grey-light;
+    }
+    &__title {
+      display: flex;
+      flex-flow: row nowrap;
+      @include respond(phone) {
+        justify-content: center;
+      }
+      h4 {
+        @include respond(laptop) {
+          font-size: 1.5rem;
+        }
+        @include respond(phone) {
+          font-size: 1.1rem;
+        }
+        font-size: 1.7rem;
+        font-weight: 600;
+      }
+    }
+    &__details {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      @include respond(phone) {
+        justify-content: center;
+      }
+    }
+    &__price {
+      @include respond(laptop) {
+        font-size: 1.2rem;
+      }
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      span {
+        text-decoration: line-through;
+        text-decoration-color: red;
+        text-decoration-style: solid;
+        margin-right: 1rem;
+      }
+    }
+  }
+  &__cart {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-basis: 30%;
+  }
+  &__table {
+    border-collapse: collapse;
+    border-bottom: 0.2rem solid $color-grey-light;
+    tr {
+      &:first-child {
+        border-top: 0.2rem solid $color-grey-light;
+        border-bottom: 0.2rem solid $color-grey-light;
+      }
+      margin-bottom: 1rem;
+    }
+    td,
+    th {
+      text-align: left;
+      padding: 0.8rem;
+      font-size: 1.5rem;
+    }
+    th {
+      // border-top: 0.2rem solid $color-grey-light;
+      // border-bottom: 0.2rem solid $color-grey-light;
+    }
+    &__item {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid $color-grey-light;
+      padding: 5px 10px 5px 5px;
+      border-radius: 5px;
+      span {
+        display: flex;
+        flex-flow: row;
+        align-items: center;
+
+        img {
+          width: 48px;
+          height: 48px;
+          max-width: 100%;
+          max-height: 100%;
+          margin-right: 15px;
+        }
+        h5 {
+          max-width: 12rem;
+        }
+      }
+    }
+    &__remove-item {
+      cursor: pointer;
+    }
+    &__quantity {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-evenly;
+      input {
+        width: 3rem;
+        text-align: center;
+      }
+      div {
+        &:first-child {
+          margin-right: 1rem;
+        }
+        &:last-child {
+          margin-left: 1rem;
+        }
+        cursor: pointer;
+        // padding: 0 1rem;
+        transform: scale(2);
+      }
+    }
+  }
+  &__summary {
+    margin-top: 1rem;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem 1.5rem;
+    border: 2px solid $color-grey-light;
+    > span:nth-child(2) {
+      margin-bottom: 1rem;
+    }
+    > span {
+      &:first-child {
+        font-weight: 700;
+      }
+      font-size: 1.5rem;
+    }
+    &__details {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      > span {
+        &:nth-child(2) {
+          text-align: center;
+        }
+        &:last-child {
+          text-align: right;
+        }
+        flex-basis: 50%;
+      }
+    }
+    &__details--final {
+      background: $color-grey-light;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+}

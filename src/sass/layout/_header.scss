@@ -1,0 +1,22 @@
+.header {
+  padding: 1.5rem 0 0 0;
+  border: 3px solid $color-grey-dark;
+  &__filter-options {
+    display: none;
+    @include respond(phone) {
+      display: flex;
+    }
+    flex-flow: row nowrap;
+    font-size: 1.6rem;
+    border-top: 2px solid $color-grey-dark;
+    padding: 0.5rem 0;
+    span {
+      &:first-child {
+        border-right: 2px solid $color-grey-dark;
+      }
+      flex-basis: 50%;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}
