@@ -71,5 +71,6 @@ import { Store } from "../../utils/storage";
         item.price.actual <= rangeS[1].value
     );
     ShopUI.showItems(items);
+    filterModal.style.display = "none";
   };
 })();
